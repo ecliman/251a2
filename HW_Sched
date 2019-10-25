@@ -74,9 +74,12 @@ public class HW_Sched {
 	 * that will be done at time i.
 	 */
 	public int[] SelectAssignments() {
+		
 		Collections.sort(Assignments, new Assignment());
 		int[] homeworkPlan = new int[lastDeadline];	
+		
 		homeworkPlan[0] = Assignments.get(0).number;
+		
 		int j =1;
 		for(int i=1; i<=lastDeadline+1; i++) {	//maybe add a helper method to check the deadline vs other weights
 			if(Assignments.get(i).deadline == Assignments.get(i-1).deadline) {
@@ -91,7 +94,3 @@ public class HW_Sched {
 		return homeworkPlan;
 	}
 }
-	
-
-
-
